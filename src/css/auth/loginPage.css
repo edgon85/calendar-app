@@ -1,0 +1,39 @@
+.authPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  block-size: 100vh;
+}
+
+.card-auth {
+  /* border: 1px solid red; */
+  inline-size: 25rem;
+  padding-block: 4rem;
+  padding-inline: 3rem;
+  text-align: center;
+  border-radius: .5rem;
+  background: var(--white);
+  box-shadow: -2px 3px 10px var(--gray20);
+}
+
+.card-auth.register{
+  background: var(--blue10);
+  color: var(--white);
+}
+
+.form {
+  margin-block-start: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+input{
+  border: 2px solid var(--gray10);
+  border-radius: .25rem ;
+  padding-block: 6px;
+  padding-inline: 4px;
+  font: var(--body1-medium);
+  /* outline-color: var(--gray30); */
+  outline-color: var(--blue20);
+}
