@@ -1,0 +1,12 @@
+.navbar {
+  block-size: 3.5rem;
+  background: black;
+  color: var(--white);
+  padding-inline: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+

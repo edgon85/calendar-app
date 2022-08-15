@@ -26,3 +26,17 @@
 /* .btn-white:hover{
    background: var(--blue20);
 } */
+
+
+.btn-outline-danger {
+  color: red;
+  border: 1px solid red;
+  border-radius: .25rem;
+  opacity: .6;
+}
+
+.btn-outline-danger:hover {
+  transition: .3s ease;
+  opacity: 1;
+}
+
