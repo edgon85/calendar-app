@@ -1,6 +1,7 @@
 @import "./css/auth/loginPage.css";
 @import "./css/ui/buttons.css";
 @import "./css/components/navbar.css";
+@import "./css/components/modal.css";
 
 :root {
   --white: #fffffe;
