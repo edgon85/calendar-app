@@ -1,3 +1,3 @@
 export * from './pages/CalendarPage';
-export * from './pages/components/Navbar';
-export * from './pages/components/CalendarEvent';
+export * from './components/Navbar';
+export * from './components/CalendarEvent';
