@@ -1,6 +1,6 @@
-.btn{
+.btn {
   border-radius: 5rem;
-  padding-block: .5rem;
+  padding-block: 0.5rem;
   font: var(--button);
   background: transparent;
   border: none;
@@ -8,14 +8,13 @@
   outline: none;
 }
 
-
 .btn-blue {
   background: var(--blue10);
   color: var(--white);
 }
 
-.btn-blue:hover{
-   background: var(--blue20);
+.btn-blue:hover {
+  background: var(--blue20);
 }
 
 .btn-white {
@@ -27,16 +26,26 @@
    background: var(--blue20);
 } */
 
-
 .btn-outline-danger {
   color: red;
   border: 1px solid red;
-  border-radius: .25rem;
-  opacity: .6;
+  border-radius: 0.25rem;
+  opacity: 0.6;
 }
 
 .btn-outline-danger:hover {
-  transition: .3s ease;
+  transition: 0.3s ease;
   opacity: 1;
 }
 
+.btn-outline-blue {
+  color: var(--blue10);
+  border: 1px solid var(--blue10);
+  border-radius: 0.25rem;
+  opacity: 1;
+}
+
+.btn-outline-blue:hover {
+  transition: 0.3s ease;
+  opacity: 0.6;
+}

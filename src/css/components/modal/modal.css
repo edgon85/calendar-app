@@ -1,3 +1,6 @@
+
+@import './form-modal.css';
+
 /* Modal */
 .ReactModalPortal > div{
     opacity: 0;

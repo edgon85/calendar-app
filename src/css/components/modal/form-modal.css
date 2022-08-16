@@ -1,0 +1,39 @@
+.modal-title {
+  font: var(--subtitle1);
+}
+
+.modal-wrapper {
+  padding-inline: 1rem;
+}
+
+.modal-wrapper > div {
+  margin-block-end: 0.5rem;
+}
+
+.group-form {
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+}
+
+hr {
+  border-color: var(--gray10);
+}
+
+textarea {
+  min-block-size: 6.25rem;
+  border: 2px solid var(--gray10);
+  border-radius: 0.25rem;
+  font: var(--body1-regula);
+  padding: 0.3125rem;
+  outline-color: var(--blue20);
+}
+
+.picker {
+  inline-size: 95%;
+  display: inline-block;
+}
+
+.control-form.is-invalid {
+  border: 1px solid red;
+}
