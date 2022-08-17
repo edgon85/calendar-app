@@ -6,24 +6,14 @@ import { addHours } from 'date-fns';
 import { Navbar, CalendarEvent, CalendarModal } from "../"
 import { localizer, getMessagesES } from '../../helpers';
 import { useState } from 'react';
-import { useUiStore } from '../../hooks';
+import { useCalendarStore, useUiStore } from '../../hooks';
 
 export const CalendarPage = () => {
 
   const { openDateModal } = useUiStore();
+  const { events } = useCalendarStore();
   const [lastView, setlastView] = useState( localStorage.getItem('lastView') || 'week' );
 
-  const events = [{
-    title: 'Pagar impuesos',
-    notes: 'pagar antes de 30 de cada mes',
-    start: new Date(),
-    end: addHours(new Date(), 2),
-    bgColor: '#fafafa',
-    user: {
-      _id: '123',
-      name: 'Camargo'
-    }
-  }];
 
   const eventStyleGetter = (event, start, end, isSelected) => {
 
