@@ -49,3 +49,16 @@
   transition: 0.3s ease;
   opacity: 0.6;
 }
+
+
+/* Fab */
+.fab {
+  background: var(--blue10);
+  border-radius: 100%;
+  color: var(--white);
+  font: var(--button);
+  inset-block-end: 1.5625rem;
+  inset-inline-end: 1.5625rem;
+  padding: 1.5625rem;
+  position: fixed;
+}
