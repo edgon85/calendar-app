@@ -22,12 +22,12 @@ export const calendarSlice = createSlice({
     activeEvent: null,
   },
   reducers: {
-    addNewEvent: (state) => {
-      console.log('nuevo evento');
+    onSetActiveEvent: (state, action) => {
+     state.activeEvent = action.payload;
     },
   }
 
 });
 
 
-export const { addNewEvent } = calendarSlice.actions;
+export const { onSetActiveEvent } = calendarSlice.actions;
