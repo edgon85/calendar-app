@@ -28,7 +28,7 @@ export const FabAddNew = () => {
   return (
     <button
       onClick={handleClickNew}
-      className="btn fab">
+      className="btn fab fab-primary ">
       <i className="fas fa-plus"></i>
     </button>
   )

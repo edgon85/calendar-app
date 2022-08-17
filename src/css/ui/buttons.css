@@ -50,15 +50,26 @@
   opacity: 0.6;
 }
 
-
 /* Fab */
 .fab {
-  background: var(--blue10);
+  /* background: var(--blue10); */
+  block-size: 3.125rem;
+  inline-size: 3.125rem;
   border-radius: 100%;
   color: var(--white);
   font: var(--button);
+  /* padding: 1.5625rem; */
+  position: fixed;
+}
+
+.fab.fab-primary {
+  background: var(--blue10);
   inset-block-end: 1.5625rem;
   inset-inline-end: 1.5625rem;
-  padding: 1.5625rem;
-  position: fixed;
+}
+
+.fab.fab-danger {
+  background: rgb(208, 32, 32);
+  inset-block-end: 1.5625rem;
+  inset-inline-start: 1.5625rem;
 }
