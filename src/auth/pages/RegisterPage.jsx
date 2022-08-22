@@ -1,6 +1,8 @@
 
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom'
-import { useForm } from '../../hooks'
+import Swal from 'sweetalert2';
+import { useAuthStore, useForm } from '../../hooks'
 
 
 const registerFormField = {
@@ -14,12 +16,24 @@ const registerFormField = {
 export const RegisterPage = () => {
 
   const { name, email, password, password2, onInputChange } = useForm(registerFormField);
+  const { startRegister, errorMessage } = useAuthStore();
 
 
-  const  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ name, email, password, password2 });
+    if (password !== password2) {
+      Swal.fire('Error  en registro', 'Contraseñas no son iguales', 'error');
+      return;
+    }
+
+    startRegister({ name, email, password });
   }
+
+  useEffect(() => {
+    if (errorMessage != undefined) {
+      Swal.fire('Error en la autenticación', errorMessage, 'error');
+    }
+  }, [errorMessage])
 
   return (
     <div className="authPage">
@@ -32,28 +46,28 @@ export const RegisterPage = () => {
             name="name"
             value={name}
             onChange={onInputChange}
-            />
+          />
           <input
             type="email"
             placeholder="Correo"
             name="email"
             value={email}
             onChange={onInputChange}
-            />
+          />
           <input
             type="password"
             placeholder="Contraseña"
             name="password"
             value={password}
             onChange={onInputChange}
-            />
+          />
           <input
             type="password"
             placeholder="Repita la contraseña"
             name="password2"
             value={password2}
             onChange={onInputChange}
-            />
+          />
           <button className="btn btn-white">Crear cuenta</button>
           <Link className="link" to={'/auth/login'}>Crear cuenta</Link>
         </form>

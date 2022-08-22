@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useForm } from "../../hooks"
+import Swal from "sweetalert2";
+import { useAuthStore, useForm } from "../../hooks"
 
 const loginFormField = {
   email: '',
@@ -10,12 +12,21 @@ const loginFormField = {
 export const LoginPage = () => {
 
   const { email, password, onInputChange } = useForm(loginFormField);
+  const { startLogin, errorMessage }  = useAuthStore();
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ email, password });
+    startLogin({ email, password });
+
   }
+
+  useEffect(() => {
+    if(  errorMessage != undefined) {
+      Swal.fire('Error en la autenticación', errorMessage, 'error');
+    }
+  }, [errorMessage])
+
 
   return (
     <div className="authPage">
@@ -37,7 +48,7 @@ export const LoginPage = () => {
             onChange={onInputChange}
           />
           <button type="submit" className="btn btn-blue">Login</button>
-          <Link className="link" compo to={ '/auth/register'}>Crear cuenta</Link>
+          <Link className="link" to={ '/auth/register'}>Crear cuenta</Link>
         </form>
       </div>
     </div>
