@@ -33,3 +33,9 @@ h1,
 h2 {
   margin: 0;
 }
+
+.link {
+  font: var(--body1-regular);
+  text-decoration: none;
+  color: var(--gray20);
+}
