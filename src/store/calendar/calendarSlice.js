@@ -24,6 +24,10 @@ export const calendarSlice = createSlice({
       state.activeEvent = action.payload;
     },
 
+    onDisableActiveEvent: (state) => {
+      state.activeEvent = null;
+    },
+
     onAddNewEvent: (state, { payload }) => {
       state.events.push(payload);
       state.activeEvent = null;
@@ -58,6 +62,7 @@ export const calendarSlice = createSlice({
 export const {
   onAddNewEvent,
   onDeleteEvent,
+  onDisableActiveEvent,
   onLoadingEvents,
   onLogoutCalendar,
   onSetActiveEvent,

@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import Swal from "sweetalert2";
 import { calendarApi } from "../api";
 import { convertEventsToDateEvents } from "../helpers";
-import { onAddNewEvent, onDeleteEvent, onLoadingEvents, onSetActiveEvent, onUpdateEvent } from "../store";
+import { onAddNewEvent, onDeleteEvent, onDisableActiveEvent, onLoadingEvents, onSetActiveEvent, onUpdateEvent } from "../store";
 
 
 
@@ -15,6 +15,10 @@ export const useCalendarStore = () => {
 
   const setActiveEvent = (calendarEvent) => {
     dispatch(onSetActiveEvent(calendarEvent));
+  }
+
+  const setDisableEvent = () => {
+    dispatch(onDisableActiveEvent());
   }
 
   const startSavingEvent = async (calendarEvent) => {
@@ -39,7 +43,7 @@ export const useCalendarStore = () => {
 
   }
 
-  const startDeletinEvent = async() => {
+  const startDeletinEvent = async () => {
     try {
       await calendarApi.delete(`/events/${activeEvent.id}`);
       dispatch(onDeleteEvent());
@@ -69,10 +73,11 @@ export const useCalendarStore = () => {
     hasEventSelected: !!activeEvent,
 
     // * Metodos
-    startDeletinEvent,
     setActiveEvent,
+    setDisableEvent,
+    startDeletinEvent,
+    startLoadingEvents,
     startSavingEvent,
-    startLoadingEvents
 
   }
 }

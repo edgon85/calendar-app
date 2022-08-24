@@ -11,7 +11,7 @@ export const CalendarPage = () => {
 
   const { user } = useAuthStore();
   const { openDateModal } = useUiStore();
-  const { events, setActiveEvent, startLoadingEvents } = useCalendarStore();
+  const { events, setActiveEvent, startLoadingEvents, setDisableEvent } = useCalendarStore();
   const [lastView, setlastView] = useState(localStorage.getItem('lastView') || 'week');
 
 
@@ -48,6 +48,9 @@ export const CalendarPage = () => {
     startLoadingEvents();
   }, [])
 
+  const deselect = () => {
+    setDisableEvent();
+  }
 
   return (
     <>
@@ -68,6 +71,8 @@ export const CalendarPage = () => {
         onDoubleClickEvent={onDoubleClick}
         onSelectEvent={onSelect}
         onView={onViewChanged}
+        selectable="true"
+        onSelectSlot={deselect}
       />
 
       <CalendarModal />

@@ -30,7 +30,7 @@ Modal.setAppElement('#root');
 export const CalendarModal = () => {
 
   const { isDateModalOpen, closeDateModal } = useUiStore();
-  const { activeEvent, startSavingEvent } = useCalendarStore();
+  const { activeEvent, startSavingEvent, setDisableEvent } = useCalendarStore();
 
 
   const [formValues, setFormValues] = useState({
@@ -46,6 +46,7 @@ export const CalendarModal = () => {
 
   const onCloseModal = () => {
     closeDateModal();
+    setDisableEvent();
   }
 
   const handleInputChnage = ({ target }) => {
